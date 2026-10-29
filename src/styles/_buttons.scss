@@ -1,0 +1,81 @@
+@use 'tokens' as *;
+
+// ═══════════════════════════════════════
+// BUTTONS
+// ═══════════════════════════════════════
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-family: $font-display;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: $radius-full;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color $transition-med,
+              color $transition-med,
+              border-color $transition-med,
+              transform $transition-base,
+              box-shadow $transition-med;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Primary: green fill (main CTA)
+.btn-primary {
+  background-color: $green;
+  color: $text-dark;
+  border-color: $green;
+
+  &:hover {
+    background-color: $green-dark;
+    border-color: $green-dark;
+    color: $white;
+    box-shadow: 0 8px 24px rgba(126, 217, 87, 0.35);
+  }
+}
+
+// Outline on dark backgrounds
+.btn-outline-white {
+  background-color: transparent;
+  color: $white;
+  border-color: rgba(255, 255, 255, 0.6);
+
+  &:hover {
+    background-color: $white;
+    color: $navy;
+    border-color: $white;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Outline on light backgrounds
+.btn-outline-navy {
+  background-color: transparent;
+  color: $navy;
+  border-color: $navy;
+
+  &:hover {
+    background-color: $navy;
+    color: $white;
+    box-shadow: 0 8px 24px rgba(16, 42, 122, 0.25);
+  }
+}
+
+// Small variant
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}

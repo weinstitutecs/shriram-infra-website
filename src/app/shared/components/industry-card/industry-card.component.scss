@@ -1,0 +1,37 @@
+.icard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 2px 16px rgba(16,42,122,.08);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+  border: 1px solid #dce6f0;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(16,42,122,.12);
+  }
+}
+.icard__icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #102A7A 0%, #1e4d2b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: #fff;
+}
+.icard__name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #102A7A;
+  margin-bottom: 12px;
+}
+.icard__desc {
+  font-size: .9rem;
+  color: #5a6a82;
+  line-height: 1.6;
+  margin: 0;
+}

@@ -1,0 +1,99 @@
+<!-- Hero -->
+<app-hero-banner
+  badge=""
+  headline="Engineering Water Solutions That Last"
+  subtext="Sewage treatment plants, effluent treatment, ZLD systems, and package plants — designed and built for performance."
+  bgImage="assets/hero-bg.jpg"
+  ctaPrimaryLabel="Our Services"
+  ctaPrimaryLink="/services"
+  ctaSecondaryLabel="About Us"
+  ctaSecondaryLink="/about">
+</app-hero-banner>
+
+<!-- Company Intro -->
+<section class="section section--light intro">
+  <div class="container">
+    <div class="intro__inner" appReveal>
+      <div class="intro__text">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-headline">Infrastructure Built with Purpose</h2>
+        <p>Shriram Infra and Tech Services LLP is a dedicated civil engineering and construction firm committed to delivering infrastructure that empowers businesses, governments, and communities.</p>
+        <p>We build for the long term — with engineering excellence, a commitment to lasting value, and a team that takes ownership at every stage of a project.</p>
+        <a routerLink="/about" class="btn btn-outline-navy">Learn About Us</a>
+      </div>
+      <div class="intro__logo-wrap">
+        <app-logo [size]="200"></app-logo>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">What We Do</span>
+      <h2 class="section-headline">Our Core Service Areas</h2>
+      <p class="section-subtext">Three integrated service pillars that cover the full lifecycle of civil engineering and infrastructure delivery.</p>
+    </div>
+    <div class="grid grid-3">
+      <app-service-card
+        *ngFor="let s of services"
+        [icon]="s.icon"
+        [title]="s.title"
+        [description]="s.description"
+        [items]="s.items">
+      </app-service-card>
+    </div>
+    <div class="services-cta">
+      <a routerLink="/services" class="btn btn-primary">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="section section--light">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Industries We Serve</span>
+      <h2 class="section-headline">Built Across Key Sectors</h2>
+      <p class="section-subtext">We serve the sectors that form the backbone of national growth and development.</p>
+    </div>
+    <div class="home-ind-grid">
+      <div class="home-ind-card" *ngFor="let ind of industries" appReveal>
+        <img [src]="ind.image" [alt]="ind.name" class="home-ind-img" loading="lazy" />
+        <div class="home-ind-overlay">
+          <span class="home-ind-label">{{ ind.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us teaser -->
+<section class="section why-teaser">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Why Shriram Infra</span>
+      <h2 class="section-headline">Why Choose Us</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="why-card" *ngFor="let w of whyUs" appReveal>
+        <div class="why-card__dot" aria-hidden="true"></div>
+        <h3 class="why-card__title">{{ w.headline }}</h3>
+        <p class="why-card__desc">{{ w.desc }}</p>
+      </div>
+    </div>
+    <div class="services-cta">
+      <a routerLink="/why-us" class="btn btn-outline-navy">See All Reasons</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<app-cta-band
+  heading="Ready to Start Your Infrastructure Project?"
+  subtext="Tell us about your project requirements and our team will get back to you promptly."
+  btn1Label="Contact Us"
+  btn1Link="/contact">
+</app-cta-band>

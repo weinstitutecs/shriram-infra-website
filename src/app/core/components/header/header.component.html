@@ -1,0 +1,33 @@
+<header class="header" [class.header--scrolled]="scrolled" role="banner">
+  <div class="container header__inner">
+    <a routerLink="/" class="header__logo" aria-label="Shriram Infra – Home" (click)="closeMenu()">
+      <app-logo [size]="75"></app-logo>
+    </a>
+    <nav class="header__nav" aria-label="Main navigation">
+      <a *ngFor="let link of navLinks"
+         [routerLink]="link.path"
+         routerLinkActive="active"
+         [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+         class="header__link">{{ link.label }}</a>
+    </nav>
+    <a routerLink="/contact" class="btn btn-primary btn-sm header__cta">Get In Touch</a>
+    <button class="header__hamburger" type="button"
+            [class.open]="menuOpen"
+            (click)="toggleMenu()"
+            [attr.aria-expanded]="menuOpen"
+            aria-controls="mobile-nav"
+            aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="header__mobile-nav" [class.open]="menuOpen" aria-label="Mobile navigation">
+    <a *ngFor="let link of navLinks"
+       [routerLink]="link.path"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+       class="header__mobile-link"
+       (click)="closeMenu()">{{ link.label }}</a>
+    <a routerLink="/contact" class="btn btn-primary" style="margin-top:8px;text-align:center;" (click)="closeMenu()">Get In Touch</a>
+  </nav>
+  <div *ngIf="menuOpen" class="header__overlay" (click)="closeMenu()" aria-hidden="true"></div>
+</header>

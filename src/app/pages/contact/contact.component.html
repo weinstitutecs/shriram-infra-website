@@ -1,0 +1,139 @@
+<!--<app-hero-banner
+  badge="Get In Touch"
+  headline="Contact Shriram Infra"
+  subtext="Share your project requirements and our team will respond promptly."
+  ctaPrimaryLabel="Our Services"
+  ctaPrimaryLink="/services">
+</app-hero-banner>-->
+
+<section class="section">
+  <div class="container contact-layout">
+
+    <!-- Left: Info panel -->
+    <aside class="contact-info">
+      <div class="contact-info__logo">
+        <app-logo [size]="180"></app-logo>
+      </div>
+      <h2 class="contact-info__heading">Shriram Infra and Tech Services LLP</h2>
+      <p class="contact-info__sub">Infrastructure &amp; Civil Engineering</p>
+
+      <div class="contact-info__items">
+        <div class="ci-item">
+          <div class="ci-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Office Address</strong>
+            <p class="placeholder-text">[Shree Samarth Plaza, 105, opp. Roxy Shop, Mulund West, Maharashtra 400080]</p>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p class="placeholder-text">[PHONE — replace before go-live]</p>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-item__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <strong>Email</strong>
+            <p class="placeholder-text">[EMAIL — replace before go-live]</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info__note">
+        <p>📋 Once you submit your enquiry, our team will review your requirements and respond within 1–2 business days.</p>
+      </div>
+    </aside>
+
+    <!-- Right: Form -->
+    <div class="contact-form-wrap">
+      <!-- Success banner -->
+      <div *ngIf="submitted" class="success-banner" role="alert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div>
+          <strong>Thank you for your message!</strong>
+          <p>Your enquiry has been received. A member of our team will be in touch with you shortly.</p>
+          <p class="success-note">⚠️ Note: A backend mail service has not yet been connected to this form. Your details have been logged to the browser console — wire up a backend (EmailJS, Formspree, or a custom API) before going live.</p>
+        </div>
+      </div>
+
+      <form *ngIf="!submitted" class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <h2 class="contact-form__heading">Send Us a Message</h2>
+
+        <div class="form-row">
+          <div class="form-group" [class.error]="showError('fullName')">
+            <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+            <input id="fullName" type="text" formControlName="fullName" placeholder="Your full name" autocomplete="name">
+            <span class="form-error" *ngIf="showError('fullName')">Please enter your full name (at least 2 characters).</span>
+          </div>
+          <div class="form-group" [class.error]="showError('email')">
+            <label for="email">Business Email <span aria-hidden="true">*</span></label>
+            <input id="email" type="email" formControlName="email" placeholder="you@company.com" autocomplete="email">
+            <span class="form-error" *ngIf="showError('email')">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="tel" formControlName="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Organisation</label>
+            <input id="company" type="text" formControlName="company" placeholder="Your company name" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="form-group" [class.error]="showError('serviceCategory')">
+          <label for="serviceCategory">Service Category <span aria-hidden="true">*</span></label>
+          <select id="serviceCategory" formControlName="serviceCategory">
+            <option value="" disabled selected>Select a service category</option>
+            <option *ngFor="let opt of serviceOptions" [value]="opt">{{ opt }}</option>
+          </select>
+          <span class="form-error" *ngIf="showError('serviceCategory')">Please select a service category.</span>
+        </div>
+
+        <div class="form-group" [class.error]="showError('message')">
+          <label for="message">Project / Enquiry Details <span aria-hidden="true">*</span></label>
+          <textarea id="message" formControlName="message" rows="5" placeholder="Describe your project, location, timeline, and any specific requirements..."></textarea>
+          <span class="form-error" *ngIf="showError('message')">Please provide some project details (at least 20 characters).</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">Send Enquiry</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- Map Section -->
+<section class="section section--light map-section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Our Location</span>
+      <h2 class="section-headline">Find Us on the Map</h2>
+    </div>
+    <div class="map-wrapper" appReveal>
+      <!-- REPLACE the src URL below with your real Google Maps embed link:
+           Google Maps → share → Embed a map → copy the iframe src URL -->
+      <iframe
+        class="map-frame"
+        [src]="mapUrl"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Shriram Infra and Tech Services LLP — Office Location">
+      </iframe>
+    </div>
+  </div>
+</section>

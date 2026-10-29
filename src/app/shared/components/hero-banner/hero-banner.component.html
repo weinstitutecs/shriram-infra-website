@@ -1,0 +1,13 @@
+<section class="hero" aria-label="Page hero">
+  <div class="hero__bg" [class.hero__bg--photo]="bgImage" [style.backgroundImage]="safeBgStyle"></div>
+  <div class="container hero__content">
+    <span *ngIf="badge" class="hero__badge">{{ badge }}</span>
+    <h1 class="hero__headline">{{ headline }}</h1>
+    <p *ngIf="subtext" class="hero__subtext">{{ subtext }}</p>
+    <div *ngIf="ctaPrimaryLabel || ctaSecondaryLabel" class="hero__ctas">
+      <a *ngIf="ctaPrimaryLabel"  [routerLink]="ctaPrimaryLink"   class="btn btn-primary">{{ ctaPrimaryLabel }}</a>
+      <a *ngIf="ctaSecondaryLabel" [routerLink]="ctaSecondaryLink" class="btn btn-outline-white">{{ ctaSecondaryLabel }}</a>
+    </div>
+  </div>
+  <div class="hero__scroll-hint" aria-hidden="true"><span></span></div>
+</section>

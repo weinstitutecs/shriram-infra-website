@@ -1,0 +1,40 @@
+.cta-band {
+  background: linear-gradient(135deg, #102A7A 0%, #1e4d2b 100%);
+  padding-block: 80px;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(ellipse at 70% 50%, rgba(126,217,87,.08) 0%, transparent 70%);
+  }
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  &__text { flex: 1; min-width: 260px; }
+  &__heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  &__subtext {
+    font-size: 1rem;
+    color: rgba(255,255,255,.78);
+    line-height: 1.6;
+    margin: 0;
+  }
+  &__actions { display: flex; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
+}
+@media (max-width:768px) {
+  .cta-band__inner { flex-direction:column; text-align:center; }
+  .cta-band__actions { justify-content:center; }
+}

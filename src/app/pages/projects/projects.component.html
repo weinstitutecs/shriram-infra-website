@@ -1,0 +1,63 @@
+<app-hero-banner
+  badge="Our Work"
+  headline="Projects & Capabilities"
+  subtext="Infrastructure projects across civil engineering, construction, and industrial sectors — delivered with precision and care."
+  ctaPrimaryLabel="Discuss a Project"
+  ctaPrimaryLink="/contact">
+</app-hero-banner>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Our Portfolio</span>
+      <h2 class="section-headline">Infrastructure Project Gallery</h2>
+      <p class="section-subtext">
+        The cards below are <strong>illustrative placeholders</strong>. Replace with actual project details before going live.
+      </p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="filter-tabs" role="tablist" aria-label="Project category filter">
+      <button *ngFor="let f of filters"
+              type="button"
+              role="tab"
+              [class.active]="activeFilter === f"
+              [attr.aria-selected]="activeFilter === f"
+              (click)="setFilter(f)"
+              class="filter-tab">
+        {{ f }}
+      </button>
+    </div>
+
+    <!-- Project cards -->
+    <div class="projects-grid">
+      <article class="pcard" *ngFor="let p of filtered" appReveal>
+        <div class="pcard__thumb" [style.background]="'linear-gradient(135deg,' + p.gradFrom + ' 0%,' + p.gradTo + ' 100%)'">
+          <span class="pcard__category">{{ p.category }}</span>
+          <span class="pcard__placeholder-badge">PLACEHOLDER</span>
+        </div>
+        <div class="pcard__body">
+          <h3 class="pcard__title">{{ p.title }}</h3>
+          <span class="pcard__location">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {{ p.location }}
+          </span>
+          <p class="pcard__desc">{{ p.description }}</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="placeholder-note">
+      ⚠️ All project cards above are illustrative placeholders. Replace title, location, description, and thumbnail with real project data before launch.
+    </p>
+  </div>
+</section>
+
+<app-cta-band
+  heading="Have a Project in Mind?"
+  subtext="Share your requirements and we'll develop a tailored approach for your infrastructure need."
+  btn1Label="Start a Conversation"
+  btn1Link="/contact"
+  btn2Label="Our Services"
+  btn2Link="/services">
+</app-cta-band>

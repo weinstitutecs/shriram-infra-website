@@ -1,0 +1,52 @@
+<app-hero-banner
+  badge="What We Deliver"
+  headline="Infrastructure Services Built on Expertise"
+  subtext="Three integrated service areas covering the full spectrum of civil engineering and construction — from design and estimation through to project handover."
+  ctaPrimaryLabel="Get a Quote"
+  ctaPrimaryLink="/contact"
+  ctaSecondaryLabel="Our Projects"
+  ctaSecondaryLink="/projects"
+  bgImage="assets/services-hero.jpg">
+</app-hero-banner>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Our Services</span>
+      <h2 class="section-headline">Comprehensive Infrastructure Delivery</h2>
+      <p class="section-subtext">Each service area is led by experienced professionals and backed by rigorous quality standards.</p>
+    </div>
+    <div class="services-list">
+      <div class="service-detail" *ngFor="let s of services; let i = index" appReveal>
+        <div class="service-detail__header">
+          <div class="service-detail__icon" [innerHTML]="s.icon" aria-hidden="true"></div>
+          <h2 class="service-detail__title">{{ s.title }}</h2>
+        </div>
+        <p class="service-detail__desc">{{ s.description }}</p>
+        <div class="service-detail__body">
+          <div class="service-detail__bullets">
+            <h3>Scope Includes</h3>
+            <ul>
+              <li *ngFor="let item of s.items">
+                <span class="bullet" aria-hidden="true"></span>{{ item }}
+              </li>
+            </ul>
+          </div>
+          <div class="service-detail__faq">
+            <div class="faq-item" *ngFor="let d of s.details">
+              <h4 class="faq-item__q">{{ d.q }}</h4>
+              <p class="faq-item__a">{{ d.a }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-cta-band
+  heading="Need a Service Quotation?"
+  subtext="Share your project brief and we'll provide a detailed scope and estimate."
+  btn1Label="Request a Quote"
+  btn1Link="/contact">
+</app-cta-band>

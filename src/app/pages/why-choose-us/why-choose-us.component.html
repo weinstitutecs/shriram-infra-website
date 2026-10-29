@@ -1,0 +1,53 @@
+<!--<app-hero-banner
+  badge="Why Work With Us"
+  headline="Six Reasons to Choose Shriram Infra"
+  subtext="Engineering credibility, project discipline, and genuine client partnership — built into every engagement."
+  ctaPrimaryLabel="Contact Us"
+  ctaPrimaryLink="/contact"
+  ctaSecondaryLabel="Our Services"
+  ctaSecondaryLink="/services">
+</app-hero-banner>-->
+
+<section class="section section--light">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Our Differentiators</span>
+      <h2 class="section-headline">What Sets Us Apart</h2>
+      <p class="section-subtext">Quality, safety, time, sustainability, expertise, and partnership — the six pillars of how Shriram Infra delivers.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let f of features" appReveal>
+        <div class="feature-card__icon" [innerHTML]="f.icon" aria-hidden="true"></div>
+        <h3 class="feature-card__title">{{ f.title }}</h3>
+        <p class="feature-card__desc">{{ f.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Promise section -->
+<section class="section">
+  <div class="container promise" appReveal>
+    <div class="promise__text">
+      <span class="section-label">Our Commitment</span>
+      <h2 class="section-headline">The Shriram Infra Promise</h2>
+      <p>Every project we take on carries our full commitment — from the first site visit to the final handover. We build for the long term, and we stand behind what we build.</p>
+      <p>We don't just complete projects; we build the kind of infrastructure that clients, communities, and future generations can depend on.</p>
+      <a routerLink="/contact" class="btn btn-primary" style="margin-top:8px">Start Your Project</a>
+    </div>
+    <div class="promise__visual">
+      <div class="promise__card">
+        <span class="promise__icon" aria-hidden="true">🏗️</span>
+        <p>"We build for the long term, with engineering excellence and a commitment to lasting value."</p>
+        <span class="promise__attr">— Shriram Infra and Tech Services LLP</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-cta-band
+  heading="Ready to Partner with Shriram Infra?"
+  subtext="Let's discuss how we can deliver your next infrastructure project with quality and purpose."
+  btn1Label="Get In Touch"
+  btn1Link="/contact">
+</app-cta-band>

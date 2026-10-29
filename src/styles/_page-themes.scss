@@ -1,0 +1,46 @@
+// ═══════════════════════════════════════
+// PER-PAGE HERO THEMES
+// Each page sets [data-page] on <body> in ngOnInit / ngOnDestroy
+// ═══════════════════════════════════════
+
+body[data-page="home"] {
+  --page-hero-from: #102A7A;
+  --page-hero-to:   #1e4d2b;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="about"] {
+  --page-hero-from: #0d2368;
+  --page-hero-to:   #102A7A;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="services"] {
+  --page-hero-from: #1e4d2b;
+  --page-hero-to:   #102A7A;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="projects"] {
+  --page-hero-from: #1e4d2b;
+  --page-hero-to:   #7ED957;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="industries"] {
+  --page-hero-from: #102A7A;
+  --page-hero-to:   #1e4d2b;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="why-us"] {
+  --page-hero-from: #172033;
+  --page-hero-to:   #102A7A;
+  --page-accent:    #7ED957;
+}
+
+body[data-page="contact"] {
+  --page-hero-from: #0d2368;
+  --page-hero-to:   #1e4d2b;
+  --page-accent:    #7ED957;
+}

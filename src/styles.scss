@@ -1,0 +1,86 @@
+// ═══════════════════════════════════════
+// GLOBAL STYLES — Shriram Infra and Tech Services
+// ═══════════════════════════════════════
+
+@use 'styles/tokens'     as *;
+@use 'styles/typography';
+@use 'styles/layout';
+@use 'styles/buttons';
+@use 'styles/page-themes';
+
+// ─── Reset & Base ─────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-body;
+  font-size: 16px;
+  color: $text-dark;
+  background-color: $white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid $green;
+  outline-offset: 3px;
+  border-radius: $radius-sm;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: $bg-light; }
+::-webkit-scrollbar-thumb {
+  background: rgba($navy, 0.3);
+  border-radius: $radius-full;
+  &:hover { background: $navy; }
+}
+
+.placeholder-badge {
+  display: inline-block;
+  background: rgba($green, 0.15);
+  color: darken($green, 20%);
+  border: 1px dashed $green;
+  border-radius: $radius-sm;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: $space-2;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}

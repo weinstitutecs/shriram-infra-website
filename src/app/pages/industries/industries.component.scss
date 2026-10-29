@@ -1,0 +1,86 @@
+.section-header { text-align:center; margin-bottom:64px; }
+.section-subtext { margin:0 auto; }
+
+.industries-list { display:flex; flex-direction:column; gap:80px; }
+
+.industry-detail {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:center;
+
+  &--reverse { direction:rtl; >* { direction:ltr; } }
+}
+
+/* ── Photo Card Visual ── */
+.industry-detail__visual { display:flex; align-items:center; justify-content:center; }
+
+.ind-photo-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  height: 360px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(16,42,122,0.18);
+}
+
+.ind-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+
+  .ind-photo-card:hover & {
+    transform: scale(1.04);
+  }
+}
+
+.ind-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(16,42,122,0.72) 0%, rgba(16,42,122,0.08) 55%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 28px 32px;
+}
+
+.ind-photo-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Content ── */
+.industry-detail__title {
+  font-family:'Montserrat',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:#102A7A;
+  margin-bottom:16px;
+}
+.industry-detail__desc  { color:#5a6a82; line-height:1.7; margin-bottom:24px; }
+.industry-detail__services {
+  list-style:none; padding:0; margin:0 0 28px;
+  li {
+    display:flex; align-items:center; gap:10px;
+    font-size:.9rem; color:#172033;
+    padding:8px 0; border-bottom:1px solid #dce6f0;
+    &:last-child { border-bottom:none; }
+  }
+}
+.bullet { flex-shrink:0; width:8px; height:8px; background:#7ED957; border-radius:50%; }
+
+/* ── Responsive ── */
+@media (max-width:992px) {
+  .industry-detail {
+    grid-template-columns:1fr;
+    gap:32px;
+    direction:ltr !important;
+  }
+  .ind-photo-card { max-width:100%; height:240px; border-radius:14px; }
+}

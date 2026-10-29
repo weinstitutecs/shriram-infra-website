@@ -1,0 +1,54 @@
+<app-hero-banner
+  badge="Sectors We Serve"
+  headline="Industries We Serve"
+  subtext="Four key sectors where Shriram Infra delivers water treatment, wastewater, and environmental engineering solutions."
+  ctaPrimaryLabel="Our Services"
+  ctaPrimaryLink="/services"
+  ctaSecondaryLabel="Contact Us"
+  ctaSecondaryLink="/contact"
+  bgImage="assets/industries-hero.jpg">
+</app-hero-banner>
+<section class="section">
+  <div class="container">
+    <div class="section-header" appReveal>
+      <span class="section-label">Our Focus Sectors</span>
+      <h2 class="section-headline">Built for the Sectors That Matter</h2>
+      <p class="section-subtext">We deliver water and wastewater treatment infrastructure across municipalities, industries, government bodies, and commercial institutions.</p>
+    </div>
+
+    <div class="industries-list">
+      <div class="industry-detail" *ngFor="let ind of industries; let i = index" [class.industry-detail--reverse]="i % 2 !== 0" appReveal>
+
+        <div class="industry-detail__visual">
+          <div class="ind-photo-card">
+            <img [src]="ind.image" [alt]="ind.name" class="ind-photo" loading="lazy" />
+            <div class="ind-photo-overlay">
+              <span class="ind-photo-label">{{ ind.name }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="industry-detail__content">
+          <h2 class="industry-detail__title">{{ ind.name }}</h2>
+          <p class="industry-detail__desc">{{ ind.description }}</p>
+          <ul class="industry-detail__services">
+            <li *ngFor="let svc of ind.services">
+              <span class="bullet" aria-hidden="true"></span>{{ svc }}
+            </li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-outline-navy">Enquire About This Sector</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-cta-band
+  heading="Operating in One of These Sectors?"
+  subtext="Let's discuss how Shriram Infra can support your next water or wastewater infrastructure project."
+  btn1Label="Get In Touch"
+  btn1Link="/contact"
+  btn2Label="View Services"
+  btn2Link="/services">
+</app-cta-band>

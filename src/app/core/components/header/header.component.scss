@@ -1,0 +1,55 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  border-bottom: 1px solid #e8edf5;
+  height: 72px;
+  transition: box-shadow 300ms ease;
+  &--scrolled { box-shadow: 0 4px 24px rgba(16,42,122,.10); }
+  &__inner { display:flex; align-items:center; height:100%; gap:24px; }
+  &__logo  { flex-shrink:0; display:flex; align-items:center; text-decoration:none; }
+  &__nav   { display:flex; align-items:center; gap:4px; flex:1; justify-content:center; }
+  &__link  {
+    font-family:'Montserrat',sans-serif; font-size:.82rem; font-weight:600;
+    color:#102A7A; text-decoration:none;
+    padding:6px 12px; border-radius:4px; position:relative; transition:color 200ms ease; letter-spacing:.02em;
+    &::after {
+      content:''; position:absolute; bottom:-2px; left:12px; right:12px;
+      height:2px; background:#7ED957; transform:scaleX(0); transform-origin:center;
+      transition:transform 200ms ease; border-radius:999px;
+    }
+    &:hover { color:#1e4d2b; &::after { transform:scaleX(1); } }
+    &.active { color:#1e4d2b; &::after { transform:scaleX(1); } }
+  }
+  &__cta { flex-shrink:0; }
+  &__hamburger {
+    display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:auto;
+    span { display:block; width:24px; height:2px; background:#102A7A; border-radius:999px; transform-origin:center; transition:transform 250ms ease,opacity 250ms ease; }
+    &.open {
+      span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+      span:nth-child(2) { opacity:0; }
+      span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    }
+  }
+  &__mobile-nav {
+    display:none; position:fixed; top:72px; right:0; width:min(300px,85vw); height:calc(100vh - 72px);
+    background:#102A7A; padding:32px; flex-direction:column; gap:12px;
+    transform:translateX(100%); transition:transform 300ms ease; z-index:999; overflow-y:auto;
+    &.open { transform:translateX(0); }
+  }
+  &__mobile-link {
+    font-family:'Montserrat',sans-serif; font-size:.95rem; font-weight:600;
+    color:rgba(255,255,255,.82); text-decoration:none;
+    padding:12px 0; border-bottom:1px solid rgba(255,255,255,.08); transition:color 200ms ease;
+    &.active { color:#7ED957; }
+    &:hover  { color:#fff; }
+  }
+  &__overlay { display:none; position:fixed; inset:72px 0 0; background:rgba(0,0,0,.45); z-index:998; }
+}
+@media (max-width:992px) {
+  .header__nav,.header__cta { display:none; }
+  .header__hamburger { display:flex; }
+  .header__mobile-nav { display:flex; }
+  .header__overlay { display:block; }
+}

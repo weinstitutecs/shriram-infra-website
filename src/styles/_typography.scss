@@ -1,0 +1,74 @@
+@use 'tokens' as *;
+
+// ═══════════════════════════════════════
+// TYPOGRAPHY
+// ═══════════════════════════════════════
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-display;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $text-dark;
+  margin: 0 0 $space-4;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+p {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $text-dark;
+  margin: 0 0 $space-4;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+.text-white {
+  color: $white;
+  h1, h2, h3, h4, p { color: $white; }
+}
+
+.section-label {
+  font-family: $font-display;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $green;
+  margin-bottom: $space-3;
+  display: block;
+}
+
+.section-headline {
+  font-family: $font-display;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: $navy;
+  margin-bottom: $space-3;
+}
+
+.section-subtext {
+  font-family: $font-body;
+  font-size: 1rem;
+  color: $text-muted;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+a {
+  color: $navy;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $green-dark;
+  }
+}
