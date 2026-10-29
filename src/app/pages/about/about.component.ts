@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit, OnDestroy {
   private platformId = inject(PLATFORM_ID);
   private seo = inject(SeoService);
   ngOnInit(): void {
-    this.seo.set({ title: 'About Us', description: 'Learn about Shriram Infra and Tech Services LLP — our vision, mission, values, and approach to infrastructure and civil engineering.' });
+    this.seo.set({ title: 'About Us', description: 'Learn about Shriram Infra and Tech Services LLP — a dedicated water and wastewater treatment company delivering STPs, ETPs, ZLD systems, and package plants across India.' });
     if (isPlatformBrowser(this.platformId)) document.body.setAttribute('data-page', 'about');
   }
   ngOnDestroy(): void {
