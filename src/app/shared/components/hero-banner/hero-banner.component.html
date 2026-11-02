@@ -1,5 +1,5 @@
 <section class="hero" aria-label="Page hero">
-  <div class="hero__bg" [class.hero__bg--photo]="bgImage" [style.backgroundImage]="safeBgStyle"></div>
+  <div class="hero__bg" [class.hero__bg--photo]="bgImage" [style]="safeBgStyle"></div>
   <div class="container hero__content">
     <span *ngIf="badge" class="hero__badge">{{ badge }}</span>
     <h1 class="hero__headline">{{ headline }}</h1>
@@ -10,4 +10,14 @@
     </div>
   </div>
   <div class="hero__scroll-hint" aria-hidden="true"><span></span></div>
+
+  <!-- Animated wave -->
+  <div class="hero__wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path class="wave-path wave-path--back"
+        d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+      <path class="wave-path wave-path--front"
+        d="M0,50 C200,10 400,70 600,50 C800,30 1000,70 1200,50 C1300,38 1370,44 1440,50 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
 </section>
