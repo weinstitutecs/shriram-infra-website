@@ -1,6 +1,5 @@
 <section class="hero" aria-label="Page hero">
-  <div class="hero__bg" [class.hero__bg--photo]="bgImage" [style]="safeBgStyle"></div>
-  <div class="container hero__content">
+  <div class="hero__bg" [class.hero__bg--photo]="bgImage" [style.background-image]="bgImage ? 'url(' + bgImage + ')' : null"></div>  <div class="container hero__content">
     <span *ngIf="badge" class="hero__badge">{{ badge }}</span>
     <h1 class="hero__headline">{{ headline }}</h1>
     <p *ngIf="subtext" class="hero__subtext">{{ subtext }}</p>
