@@ -59,11 +59,21 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.submitAttempted = true;
-    if (this.form.invalid) return;
-    console.log('[Contact form] Form values (backend not yet connected):', this.form.value);
-    this.submitted = true;
-    this.form.reset();
-    this.submitAttempted = false;
-  }
+  this.submitAttempted = true;
+  if (this.form.invalid) return;
+  const v = this.form.value;
+  const text = encodeURIComponent(
+    `New Enquiry from siats.in\n\n` +
+    `Name: ${v.fullName}\n` +
+    `Email: ${v.email}\n` +
+    `Phone: ${v.phone || 'Not provided'}\n` +
+    `Company: ${v.company || 'Not provided'}\n` +
+    `Service: ${v.serviceCategory}\n\n` +
+    `Message:\n${v.message}`
+  );
+  window.open(`https://wa.me/919076310362?text=${text}`, '_blank');
+  this.submitted = true;
+  this.form.reset();
+  this.submitAttempted = false;
+}
 }
